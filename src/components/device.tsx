@@ -108,11 +108,22 @@ export const Device = () => {
                 const newDevices = [...devices];
                 newDevices[4].quantity--;
                 setDevices(newDevices);
+                setShowAlert(false);
             }
         }
     };
 
     /* The below set of methods are added to dynamically populate the grids STARTS */
+
+    function createGrid(rows:number, columns:number) {
+        const grid = document.createElement("div");
+        grid.className = "grid-item";
+        grid.style.gridRow = `span ${rows}`;
+        grid.style.gridColumn = `span ${columns}`;
+        const container = document.getElementById("grid-container");
+        container?.appendChild(grid);
+    }
+
     function isGridAvailable(row :number, column :number, rows : number, columns :number, gridArray : boolean[][]) {
         for (let r = row; r < row + rows; r++) {
             for (let c = column; c < column + columns; c++) {
@@ -134,11 +145,7 @@ export const Device = () => {
                 gridArray[r][c] = true;
             }
         }
-        let itemList=gridItems;
-        itemList.push(
-            <GridItem rowValue={rows} columnValue={columns} />
-        );
-        setGridItems(itemList);
+       createGrid(rows,columns);
     }
     const addGridElements =  (deviceName :string) =>{
         const gridArray =  [];
@@ -194,8 +201,7 @@ export const Device = () => {
                             <div className="col">TOTAL PRICE</div>
                             <div className="col text-right"><b>${totalEstimatedCost}</b></div>
                         </div>
-                        <div className="grid-container col-xs-12 board">
-                            {gridItems}
+                        <div id="grid-container" className="grid-container col-xs-12 board">
                         </div>
                         <div className="row" style={{ border: 1 }}>
                             <div className="col"></div>
