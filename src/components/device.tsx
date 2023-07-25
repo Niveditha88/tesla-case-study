@@ -37,6 +37,7 @@ export const Device = () => {
         if(newDevices[index].quantity > 0){
             newDevices[index].quantity--;
             setDevices(newDevices);
+            removeGridElements(newDevices[index].deviceName);
             reCalculateSummaryVitals();
         }
     };
@@ -106,6 +107,7 @@ export const Device = () => {
             if(deviceCountOtherThanTransformer/4 < noOfTransformers && noOfTransformers !== 0){
                 const newDevices = [...devices];
                 newDevices[4].quantity--;
+                removeGridElements(newDevices[4].deviceName);
                 setDevices(newDevices);
                 setShowAlert(false);
             }
@@ -114,9 +116,9 @@ export const Device = () => {
 
     /* The below set of methods are added to dynamically populate the grids STARTS */
 
-    function createGrid(rows:number, columns:number, backgroundColor: string) {
+    function createGrid(rows:number, columns:number, classNames: string) {
         const grid = document.createElement("div");
-        grid.className = "grid-item";
+        grid.className = `span ${classNames}`;
         grid.style.gridRow = `span ${rows}`;
         grid.style.gridColumn = `span ${columns}`;
         grid.style.backgroundColor=`backgroundColor`;
@@ -134,7 +136,7 @@ export const Device = () => {
         }
         return false;
     }
-    function addGrid(rows : number, columns :number, gridArray: boolean[][],backgroundColor: string) {
+    function addGrid(rows : number, columns :number, gridArray: boolean[][],classNames: string) {
         let row, column;
         do {
             row = Math.floor(Math.random() * (10 - rows));
@@ -145,26 +147,44 @@ export const Device = () => {
                 gridArray[r][c] = true;
             }
         }
-       createGrid(rows,columns, backgroundColor);
+       createGrid(rows,columns, classNames);
     }
     const addGridElements =  (deviceName :string) =>{
         const gridArray =  [];
-        let rows =0,columns = 0,backgroundColor ="";
+        let rows =0,columns = 0,classNames ="";
         for (let i = 0; i < 10; i++) {
             gridArray.push(new Array(10).fill(false));
         }
         if(deviceName === MEGAPACK_2_XL){
-            rows=1; columns= 4;backgroundColor ="red";
+            rows=1; columns= 4;classNames ="grid-item red";
         }else if(deviceName === MEGAPACK_2){
-            rows=1; columns= 3;backgroundColor ="green";
+            rows=1; columns= 3;classNames ="grid-item orange";
         }else if(deviceName === MEGAPACK){
-            rows=1; columns= 3;backgroundColor ="blue";
+            rows=1; columns= 3;classNames ="grid-item blue";
         }else if(deviceName === POWERPACK){
-            rows=1; columns=1;backgroundColor ="yellow";
+            rows=1; columns=1;classNames ="grid-item yellow";
         }else{
-            rows=1; columns=1;backgroundColor ="turquoise";
+            rows=1; columns=1;classNames ="grid-item gray";
         }
-        addGrid(rows, columns, gridArray, backgroundColor);
+        addGrid(rows, columns, gridArray, classNames);
+    }
+
+    const removeGridElements =  (deviceName :string) =>{
+        let classNames = "";
+        if(deviceName === MEGAPACK_2_XL){
+           classNames ="red";
+        }else if(deviceName === MEGAPACK_2){
+            classNames ="orange";
+        }else if(deviceName === MEGAPACK){
+            classNames ="blue";
+        }else if(deviceName === POWERPACK){
+            classNames="yellow";
+        }else{
+            classNames ="gray";
+        }
+        const container = document.getElementById("grid-container");
+        const childGrid = document.getElementsByClassName(`${classNames}`);
+        container?.removeChild(childGrid[0]);
     }
 
     /* The below set of methods are added to dynamically populate the grids ENDS */

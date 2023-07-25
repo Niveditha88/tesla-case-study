@@ -249,7 +249,6 @@ td.r,th.r {
 .grid-container > div {
   border: 2px solid rgb(233 171 88);
   border-radius: 5px;
-  background-color: rgba(233 171 88 / 0.5);
   padding: 1em;
   color: #d9480f;
 }
@@ -269,4 +268,23 @@ td.r,th.r {
   background-color: lightgray;
   padding: 10px;
   text-align: center;
+}
+
+.red{
+  background-color:red;
+}
+
+.yellow{
+  background-color:yellow;
+}
+
+.blue{
+  background-color:blue;
+}
+
+.orange{
+  background-color:orange;
+}
+.gray{
+  background-color:lightgray;
 }
