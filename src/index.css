@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  font-family: arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  #background:#9BC86A;
+  background:white;
+  font:400 14px 'Calibri','Arial';
+  padding:20px;
+}

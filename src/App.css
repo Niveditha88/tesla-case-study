@@ -1,0 +1,270 @@
+.App {
+  text-align: center;
+}
+.container {
+  margin: 10px auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #ababab;
+}
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board {
+  margin: 10px;
+  height: 200px;
+  width: calc(100% - 40px);
+  background-color: teal;
+  border: 1px solid black;
+  font-size: 2.5em;
+  color: white;
+  text-align: center;
+  line-height: 400px;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./tesla_energy_logo.png);
+  background-repeat: no-repeat;
+  height: 20vh;
+  width: 100%;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.title{
+  margin-bottom: 5vh;
+}
+.device-container{
+  margin: auto;
+  width: 100%;
+  border-radius: 1rem;
+  border: transparent;
+}
+@media(max-width:767px){
+  .device{
+    margin: 3vh auto;
+  }
+}
+.device-section{
+  background-color: #fff;
+  padding: 4vh 5vh;
+  display: flex;
+  width: 100%;
+  height: 410px;
+}
+@media(max-width:767px){
+  .device-section{
+    padding: 4vh;
+  }
+}
+.summary{
+  background-color: #ddd;
+  padding: 4vh;
+  color: rgb(65, 65, 65);
+  width:45%;
+  height:140%;
+}
+@media(max-width:767px){
+  .summary{
+    border-top-right-radius: unset;
+    border-bottom-left-radius: 1rem;
+  }
+}
+.summary .col-2{
+  padding: 0;
+}
+.summary .col-10 {
+  padding: 0;
+}
+.row{
+  margin: 0;
+}
+.title b{
+  font-size: 1.5rem;
+}
+.main{
+  margin: 0;
+  padding: 2vh 0;
+  width: 100%;
+}
+.col-2, .col{
+  padding: 0 1vh;
+}
+a{
+  padding: 0 1vh;
+}
+img{
+  width: 3.5rem;
+}
+h5{
+  margin-top: 4vh;
+}
+hr{
+  margin-top: 1.25rem;
+}
+form{
+  padding: 2vh 0;
+}
+.btn{
+  background-color: #000;
+  border-color: #000;
+  color: white;
+  width: 100%;
+  font-size: 0.7rem;
+  margin-top: 4vh;
+  padding: 1vh;
+  border-radius: 0;
+}
+.btn:focus{
+  box-shadow: none;
+  outline: none;
+  box-shadow: none;
+  color: white;
+  -webkit-box-shadow: none;
+  -webkit-user-select: none;
+  transition: none;
+}
+.btn-primary{
+  background-color:forestgreen;
+}
+.btn:hover{
+  color: white;
+}
+a{
+  color: black;
+}
+a:hover{
+  color: black;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+li {
+  display: inline-block;
+  margin-right: 10px;
+}
+table {
+  border-spacing: 1px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 700px;
+  width: 100%;
+  height: 140%;
+  margin: 0 auto;
+  position: relative;
+}
+td,th {
+  padding-left:8px
+}
+thead tr {
+  height:60px;
+  background:#FFED86;
+  font-size:16px;
+}
+tbody tr {
+  height:48px;
+  border-bottom:1px solid #E3F1D5 ;
+}
+tbody tr:last-child {
+  border:0;
+}
+td,th {
+  text-align:left;
+}
+td.l,th.l {
+  text-align:right;
+}
+td.c,th.c {
+  text-align:center
+}
+td.r,th.r {
+  text-align:center
+}
+.footer {
+  padding-top:130px;
+}
+.alert-success{
+  background-color:#0dcaf0;
+}
+@media only screen and (max-width: 23.5em) {
+  table {
+    display:block;
+  }
+  table > tr,table > td,table >th {
+    display:block
+  }
+  thead {
+    display:none
+  }
+  tbody tr {
+    height: auto;
+    padding: 8px 0;
+  }
+  td {
+    padding-left: 45%;
+    margin-bottom: 12px;
+  }
+  td:last-child {
+    margin-bottom: 0;
+  }
+  td:before {
+    position: absolute;
+    font-weight: 700;
+    width: 40%;
+    left: 10px;
+    top: 0
+  }
+  td:before:nth-child(1):before {
+    content: "Code";
+  }
+  td:before:nth-child(2):before {
+    content: "Stock";
+  }
+  td:before:nth-child(3):before {
+    content: "Cap";
+  }
+  td:before:nth-child(4):before {
+    content: "Inch";
+  }
+  td:before:nth-child(5):before {
+    content: "Box Type";
+  }
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.grid-container > div {
+  border: 2px solid rgb(233 171 88);
+  border-radius: 5px;
+  background-color: rgba(233 171 88 / 0.5);
+  padding: 1em;
+  color: #d9480f;
+}
+.grid-container {
+  grid-template-rows: repeat(4,50px);
+  grid-template-columns: repeat(10, 100px); /* Define the number of columns and their size */
+  max-width: 650px;
+  height: 200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 10px; /* Define the gap between grids */
+}
+
+.grid-item {
+  background-color: lightgray;
+  padding: 10px;
+  text-align: center;
+}
