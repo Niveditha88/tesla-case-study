@@ -115,11 +115,12 @@ export const Device = () => {
 
     /* The below set of methods are added to dynamically populate the grids STARTS */
 
-    function createGrid(rows:number, columns:number) {
+    function createGrid(rows:number, columns:number, backgroundColor: string) {
         const grid = document.createElement("div");
         grid.className = "grid-item";
         grid.style.gridRow = `span ${rows}`;
         grid.style.gridColumn = `span ${columns}`;
+        grid.style.backgroundColor=`backgroundColor`;
         const container = document.getElementById("grid-container");
         container?.appendChild(grid);
     }
@@ -134,7 +135,7 @@ export const Device = () => {
         }
         return false;
     }
-    function addGrid(rows : number, columns :number, gridArray: boolean[][]) {
+    function addGrid(rows : number, columns :number, gridArray: boolean[][],backgroundColor: string) {
         let row, column;
         do {
             row = Math.floor(Math.random() * (10 - rows));
@@ -145,26 +146,26 @@ export const Device = () => {
                 gridArray[r][c] = true;
             }
         }
-       createGrid(rows,columns);
+       createGrid(rows,columns, backgroundColor);
     }
     const addGridElements =  (deviceName :string) =>{
         const gridArray =  [];
-        let rows =0,columns = 0;
+        let rows =0,columns = 0,backgroundColor ="";
         for (let i = 0; i < 10; i++) {
             gridArray.push(new Array(10).fill(false));
         }
         if(deviceName === MEGAPACK_2_XL){
-            rows=1; columns= 4;
+            rows=1; columns= 4;backgroundColor ="red";
         }else if(deviceName === MEGAPACK_2){
-            rows=1; columns= 3;
+            rows=1; columns= 3;backgroundColor ="green";
         }else if(deviceName === MEGAPACK){
-            rows=1; columns= 3;
+            rows=1; columns= 3;backgroundColor ="blue";
         }else if(deviceName === POWERPACK){
-            rows=1; columns=1;
+            rows=1; columns=1;backgroundColor ="yellow";
         }else{
-            rows=1; columns=1;
+            rows=1; columns=1;backgroundColor ="turquoise";
         }
-        addGrid(rows, columns, gridArray);
+        addGrid(rows, columns, gridArray, backgroundColor);
     }
 
     /* The below set of methods are added to dynamically populate the grids ENDS */
