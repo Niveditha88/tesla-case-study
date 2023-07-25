@@ -2,7 +2,6 @@ import React from "react";
 import "../App.css";
 import axios from "axios";
 import {DeviceItem} from "./deviceItem";
-import {GridItem} from "./gridItem";
 import {IDeviceProps} from "../model/deviceModel";
 import {Alerts} from "./alerts";
 import {MEGAPACK_2_XL, MEGAPACK_2, MEGAPACK, POWERPACK} from "../constants/deviceContants";
@@ -14,7 +13,6 @@ export const Device = () => {
     const [totalQuantity, setTotalQuantity] = React.useState(0);
     const [totalEnergy, setTotalEnergy] = React.useState(0);
     const [totalAreaRequired, setTotalAreaRequired] = React.useState(0);
-    const [gridItems, setGridItems] = React.useState<React.ReactElement[]>([]);
     const [showAlert, setShowAlert] = React.useState(false);
 
     /* Retrieve the devices json input */
@@ -101,6 +99,7 @@ export const Device = () => {
         if(deviceCountOtherThanTransformer%4 === 0 && (deviceCountOtherThanTransformer/4 > noOfTransformers)){
             const newDevices = [...devices];
             newDevices[4].quantity++;
+            addGridElements(newDevices[4].deviceName);
             setDevices(newDevices);
             setShowAlert(true);
         }else if ((deviceCountOtherThanTransformer)%4 === 3){

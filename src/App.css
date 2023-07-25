@@ -68,8 +68,8 @@ img {
   background-color: #ddd;
   padding: 4vh;
   color: rgb(65, 65, 65);
-  width:45%;
-  height:140%;
+  width:800px;
+  height:500px;
 }
 @media(max-width:767px){
   .summary{
@@ -255,15 +255,14 @@ td.r,th.r {
 }
 .grid-container {
   #grid-template-rows: repeat(4,45px);
-  grid-template-columns: repeat(8, 50px);
+  grid-template-columns: repeat(10, 50px);
   grid-auto-rows: 65px;
   grid-auto-flow: row;
-  /* Define the number of columns and their size */
   max-width: 650px;
-  max-height: 200px;
-  margin: 0 auto;
+  max-height: 300px;
   display: grid;
-  grid-gap: 10px; /* Define the gap between grids */
+  grid-gap: 10px;
+  overflow:hidden;
 }
 
 .grid-item {
