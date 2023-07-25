@@ -29,7 +29,7 @@ export const DeviceItem = (props : any) => {
                 {props.devices.map((device:IDeviceProps, index:number) => {
                     return (
                         <tr key={device.deviceId}>
-                            <td>{device.deviceName}</td>
+                            <td><div className="box" style={{ backgroundColor: device.color}}/> {device.deviceName}</td>
                             <td>{device.dimension}</td>
                             <td style={{textAlign:"center"}}>{device.energy}MWh</td>
                             <td>

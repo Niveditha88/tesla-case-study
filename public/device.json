@@ -5,7 +5,8 @@
   "quantity"   : 0,
   "energy"     : 4,
   "cost"       : 120000,
-  "date"       : 2022
+  "date"       : 2022,
+  "color"      : "red"
 },
   {
     "deviceId"   : 2,
@@ -14,7 +15,8 @@
     "quantity"   : 0,
     "energy"     : 3,
     "cost"       : 80000,
-    "date"       : 2021
+    "date"       : 2021,
+    "color"      : "orange"
   },
   {
     "deviceId"   : 3,
@@ -23,7 +25,8 @@
     "quantity"   : 0,
     "energy"     : 2,
     "cost"       : 50000,
-    "date"       : 2005
+    "date"       : 2005,
+    "color"      : "blue"
   },
   {
     "deviceId"   : 4,
@@ -32,7 +35,8 @@
     "quantity"   : 0,
     "energy"     : 1,
     "cost"       : 20000,
-    "date"       : 2000
+    "date"       : 2000,
+    "color"      : "yellow"
   },
   {
     "deviceId"   : 5,
@@ -41,5 +45,6 @@
     "quantity"   : 0,
     "energy"     : -0.25,
     "cost"       : 10000,
-    "date"       : 0
+    "date"       : 0,
+    "color"      : "gray"
   }]

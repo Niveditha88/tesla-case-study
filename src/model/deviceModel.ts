@@ -5,5 +5,6 @@ export interface IDeviceProps {
     quantity: number,
     energy: number,
     cost: number,
-    date: number
+    date: number,
+    color:string
 }

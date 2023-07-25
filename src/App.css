@@ -269,6 +269,14 @@ td.r,th.r {
   padding: 10px;
   text-align: center;
 }
+.box {
+  float: left;
+  height: 20px;
+  width: 20px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  clear: both;
+}
 
 .red{
   background-color:red;
