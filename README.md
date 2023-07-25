@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Steps to Download and execute the code
+
+1. Go to your local folder where you wanted to do download the code and type the following command
+   "git clone https://github.com/Niveditha88/tesla-case-study.git"
+
+2. After your code is downloaded, go inside the folder ##tesla-energy-sales-app## and type the following command "git checkout master"
+
+3. Then type "git pull" command to get the latest repository code.
+
+4. Install the packages using "npm i" command.
+
+5. Start the server using "npm start" command and listen to the port https://localhost:8000
+
 ## Available Scripts
 
 In the project directory, you can run the following steps:
