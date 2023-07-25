@@ -15,6 +15,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 5. Start the server using "npm start" command and listen to the port https://localhost:8000
 
+6. To run the test changes , use "npm run test" command and then click Enter when prompted to execute tests.
+
 ## Available Scripts
 
 In the project directory, you can run the following steps:
